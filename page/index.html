@@ -52,15 +52,75 @@
 	<div class="weui-panel weui-panel_access">
 		<div class="weui-panel__hd" style="padding:0;">
 			<div class="weui-flex">
-				<div class="weui-flex__item placeselect">
+				<div id="plocal" class="weui-flex__item placeselect">
 					区域 <i style="color:#010101;" class="fa fa-chevron-down"></i>
 				</div>
-				<div class="weui-flex__item placeselect">
+				<div id="ptype" class="weui-flex__item placeselect">
 					类型 <i style="color:#010101;" class="fa fa-chevron-down"></i>
 				</div>
-				<div class="weui-flex__item placeselect">
+				<div id="ptime" class="weui-flex__item placeselect">
 					时间 <i style="color:#010101;" class="fa fa-chevron-down"></i>
 				</div>
+			</div>
+		</div>
+		<div id="slocal" style="display:none;">
+			<div class="weui-form-preview__bd" style="text-align:left;">
+				选择区域
+			</div>
+			<div class="weui-panel__bd checkDiv">
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<br>
+				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
+				<br>
+				<div class="weui-panel__hd" style="padding:0;"></div>
+
+			</div>
+		</div>
+		<div id="stype" style="display:none;">
+			<div class="weui-form-preview__bd" style="text-align:left;">
+				选择类型
+			</div>
+			<div class="weui-panel__bd checkDiv">
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<br>
+				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
+				<br>
+				<div class="weui-panel__hd" style="padding:0;"></div>
+
+			</div>
+		</div>
+		<div id="stime" style="display:none;">
+			<div class="weui-form-preview__bd" style="text-align:left;">
+				选择时间
+			</div>
+			<div class="weui-panel__bd checkDiv">
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<span class="weui-btn weui-btn_mini weui-btn_defualt checkBtn" name="local" value="江宁">江宁</span>
+				<br>
+				<button class="weui-btn weui-btn_mini commitBtn">筛选</button>
+				<br>
+				<div class="weui-panel__hd" style="padding:0;"></div>
+
 			</div>
 		</div>
 		<div class="weui-panel__bd" id="jz-all">
@@ -181,6 +241,30 @@
 	$(document.body).infinite().on("infinite",loadm);
 	$("p").longPress(function(){
 		$('#notice').hide();
+	});
+	$('.checkBtn').click(function(){
+		if($(this).is('.checkBtnActive')){
+			$(this).removeClass('checkBtnActive');
+		}else{
+			$(this).addClass('checkBtnActive');
+		}
+	});
+
+	$("#plocal").click(function(){
+		$('#slocal').show();
+		$('#stype').hide();
+		$('#stime').hide();
+	});
+
+	$("#ptype").click(function(){
+		$('#slocal').hide();
+		$('#stype').show();
+		$('#stime').hide();
+	});
+	$("#ptime").click(function(){
+		$('#slocal').hide();
+		$('#stype').hide();
+		$('#stime').show();
 	});
 </script>
 </body>

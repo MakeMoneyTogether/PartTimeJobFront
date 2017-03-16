@@ -64,3 +64,17 @@
 	line-height:1.5;
 	text-align:left;
 }
+.checkDiv{
+	padding-left: 5%;
+}
+.checkBtn{
+	color: #0f0f0f;
+	margin-top: 0 !important; 
+}
+.checkBtnActive{
+	background-color: #83FCD8;
+}
+.commitBtn{
+	background-color: #1AAd19;
+	margin-bottom: 5%;
+}
