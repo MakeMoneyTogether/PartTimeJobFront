@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>兼职平台</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../css/weui.min.css">
+<link rel="stylesheet" href="../css/jquery-weui.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/jz.css">
+<link rel="stylesheet" href="../css/col.css">
+</head>
+<body ontouchstart>		
+<div class="weui-tabbar" style="position:fixed;">
+	<div class="weui-navbar__item" onclick="jump(1);">
+		发布兼职
+	</div>
+	<div class="weui-navbar__item" onclick="jump(2);">
+		兼职列表
+	</div>
+	<div class="weui-navbar__item weui-bar__item--on" onclick="jump(3);">
+		商户中心
+	</div>
+</div>
+<div class="weui-form-preview">
+	<div class="weui-form-preview__hd">
+		<div class="col-20 div_left">
+			<img style="width:100%;" alt="统一头像" src="../images/1.jpg">
+		</div>
+		<div class="col-50 div_left">
+			<span style="margin-left:5%;float:left;" id="uname">商户名称</span><br>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+</div>
+<div class="weui-cells weui-flex div_label_out">
+	<div class="weui-flex__item div_box div_label_in">
+		可用资产:<br><span>1000.00</span>元
+	</div>
+	<div class="weui-flex__item div_box div_label_in">
+		冻结资产:<br><span>1000.00</span>元
+	</div>
+</div>
+<div class="weui-cells" style="margin-top:0;">
+	<div class="weui-cell weui-cell_access" onclick="jump(4);">
+		<div class="weui-cell__hd">
+			<i class="fa fa-fax"></i>
+		</div>
+		<div class="weui-cell__bd">
+			<p style="margin-left:10%;">修改信息</p>
+		</div>
+		<div class="weui-cell__ft">
+		</div>
+	</div>
+	<div class="weui-cell weui-cell_access" onclick="jump(5);">
+		<div class="weui-cell__hd">
+			<i class="fa fa-money"></i>
+		</div>
+		<div class="weui-cell__bd">
+			<p style="margin-left:10%;">资产操作</p>
+		</div>
+		<div class="weui-cell__ft">
+		</div>
+	</div>
+	<div class="weui-cell weui-cell_access" onclick="jump(6);">
+		<div class="weui-cell__hd">
+			<i class="fa fa-cog"></i>
+		</div>
+		<div class="weui-cell__bd">
+			<p style="margin-left:10%;">修改密码</p>
+		</div>
+		<div class="weui-cell__ft">
+		</div>
+	</div>
+	<div class="weui-cell weui-cell_access" onclick="jump(7);">
+		<div class="weui-cell__hd">
+			<i class="fa fa-sign-out"></i>
+		</div>
+		<div class="weui-cell__bd">
+			<p style="margin-left:10%;">退出登录</p>
+		</div>
+		<div class="weui-cell__ft">
+		</div>
+	</div>
+</div>
+<div>
+	<h1>&nbsp;</h1>
+</div>																			
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script>
+	$(function() {
+	FastClick.attach(document.body);
+	});
+</script>
+</body>
+</html>

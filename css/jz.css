@@ -69,12 +69,43 @@
 }
 .checkBtn{
 	color: #0f0f0f;
-	margin-top: 0 !important; 
+	margin-left: 5px;
+	border:1px dashed #000;
 }
 .checkBtnActive{
-	background-color: #83FCD8;
+	border:1px solid #0099CC;
 }
 .commitBtn{
+	width:80% !important; 
 	background-color: #1AAd19;
 	margin-bottom: 5%;
+	margin-top: 5%;
+	margin-left: 10%;
+}
+.div_left{
+	float:left;
+}
+.div_right{
+	float:right;
+}
+.icon-only > i{	/*针对日历左右选择按钮做的调整*/
+	margin-top:30%;
+}
+.div_label_out{	/*多栏显示*/
+	text-align:center;
+	margin-top:0;
+	padding:0;
+}
+.div_label_in{	/*多栏显示*/
+	padding:2% 0;
+}
+.div_box{
+	/*background-color: #efeff4;*/
+	border-left:2px solid #efeff4;
+}
+.div_border{
+	border:1px solid #000;
+}
+.div_border_left{
+	border-left:1px solid #000;
 }
