@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>兼职平台</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../css/weui.min.css">
+<link rel="stylesheet" href="../css/jquery-weui.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/jz.css">
+<link rel="stylesheet" href="../css/col.css">
+</head>
+<body ontouchstart>		
+<div class="weui-flex">
+	<div class="placeholder"><a onclick="history.go(-1);"><i class="fa fa-chevron-left" style="color:#010101;margin-top: 90%;"></i></a></div>
+	<div class="weui-flex__item placeholder">
+		<span id="jz-title">资产操作</span>
+	</div>
+</div>
+
+
+<div class="weui-cells weui-flex div_label_out">
+	<div class="weui-flex__item div_box div_label_in">
+		可用资产:<br><span>1000.00</span>元
+	</div>
+	<div class="weui-flex__item div_box div_label_in">
+		冻结资产:<br><span>1000.00</span>元
+	</div>
+</div>
+<div class="weui-cells weui-flex div_label_out">
+	<div class="weui-flex__item div_label_in">
+		<button style="width:50%;" class="weui-btn weui-btn_mini weui-btn_primary">充值</button>
+	</div>
+	<div class="weui-flex__item div_label_in">
+		<button onclick="cash();" style="width:50%;" class="weui-btn weui-btn_mini weui-btn_primary">提现</button>
+	</div>
+</div>
+<div class="weui-cells" style="margin-top:0;">
+	<div class="weui-cells__title">提现进度</div>
+	<div id="out_moneys">
+	<div class="weui-cell">
+		<div class="weui-cell__hd">
+			<i class="fa fa-euro"></i>
+		</div>
+		<div class="weui-cell__bd">
+			<p style="margin-left:10%;">提现 200.0</p>
+		</div>
+		<div class="weui-cell__ft">
+			<i class="weui-icon-waiting"></i>
+		</div>
+	</div>
+	</div>
+	
+</div>
+
+<div>
+	<h1>&nbsp;</h1>
+</div>																			
+<script src="../js/jquery-2.1.4.js"></script>
+<script src="../js/fastclick.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/merchant.js"></script>
+<script>
+	$(function() {
+	FastClick.attach(document.body);
+	});
+	function cash(){
+		$.prompt({
+			title: '提现',
+			text: '请输入提现金额',
+			input: '100.0',
+			empty: false, // 是否允许为空
+			onOK: function (input) {
+				//点击确认
+			},
+			onCancel: function () {
+				//点击取消
+			}
+		});
+	}
+	$(function(){
+		for(i=0;i<10;i++){
+			$('#out_moneys').append('<div class="weui-cell"><div class="weui-cell__hd"><i class="fa fa-euro"></i></div><div class="weui-cell__bd"><p style="margin-left:10%;">提现 200.0</p></div><div class="weui-cell__ft"><i class="weui-icon-waiting"></i></div></div>');
+		}
+		for(i=0;i<5;i++){
+			$('#out_moneys').append('<div class="weui-cell"><div class="weui-cell__hd"><i class="fa fa-euro"></i></div><div class="weui-cell__bd"><p style="margin-left:10%;">提现 200.0</p></div><div class="weui-cell__ft"><i class="weui-icon-success"></i></div></div>');
+		}
+	});
+</script>
+</body>
+</html>
